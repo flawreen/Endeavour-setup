@@ -6,8 +6,7 @@ sudo pacman -S sublime-text
 flatpak install flathub com.spotify.Client
 zsh
 yay -S --noconfirm zsh-theme-powerlevel10k-git
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' 
->>~/.zshrc
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 p10k configure
 sudo echo 'background            #181c27
 foreground            #ada37a
