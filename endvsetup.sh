@@ -68,3 +68,8 @@ read -p "Configure zsh? [y/N] " x
 if [[ $x = y ]] ; then
 	zsh -c "p10k configure"
 fi
+
+read -p "Run kitty? [y/N] " x
+if [[ $x = y ]] ; then
+	kitty&
+fi
