@@ -4,10 +4,8 @@ curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
 sudo pacman -S sublime-text
 flatpak install flathub com.spotify.Client
-zsh
 yay -S --noconfirm zsh-theme-powerlevel10k-git
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-p10k configure
 sudo echo 'background            #181c27
 foreground            #ada37a
 cursor                #91805a
@@ -30,10 +28,10 @@ color7                #ada37e
 color15               #f3f3f3
 selection_foreground #181c27' >> ~/.config/kitty/theme.conf
 sudo echo 'include ./theme.conf' >> ~/.config/kitty/kitty.conf
-firefox https://www.jetbrains.com/toolbox-app/
-firefox https://www.xfce-look.org/p/1267246/
-firefox https://www.xfce-look.org/p/1305251/
-firefox https://zoom.us/download?os=linux
+firefox https://www.jetbrains.com/toolbox-app/ &
+firefox https://www.xfce-look.org/p/1267246/ &
+firefox https://www.xfce-look.org/p/1305251/ &
+firefox https://zoom.us/download?os=linux &
 echo 'XFCE Settings================================
 	Appearance
 		Style
@@ -59,3 +57,14 @@ echo 'XFCE Settings================================
  		   terminal 
  			  -kitty
 '
+sleep 5
+
+read -p "Run zsh? [y/N] " x
+if [[ $x = y ]] ; then
+	zsh
+fi
+
+read -p "Configure zsh? [y/N] " x
+if [[ $x = y ]] ; then
+	zsh -c "p10k configure"
+fi
