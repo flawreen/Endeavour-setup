@@ -29,8 +29,6 @@ color15               #f3f3f3
 selection_foreground #181c27' >> ~/.config/kitty/theme.conf
 sudo echo 'include ./theme.conf' >> ~/.config/kitty/kitty.conf
 firefox https://www.jetbrains.com/toolbox-app/ &
-firefox https://www.xfce-look.org/p/1267246/ &
-firefox https://www.xfce-look.org/p/1305251/ &
 firefox https://zoom.us/download?os=linux &
 echo 'XFCE Settings================================
 	Appearance
