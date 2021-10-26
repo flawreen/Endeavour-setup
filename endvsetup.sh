@@ -30,34 +30,9 @@ color7                #ada37e
 color15               #f3f3f3
 selection_foreground #181c27' >> ~/.config/kitty/theme.conf
 sudo echo 'include ./theme.conf' >> ~/.config/kitty/kitty.conf
+
 firefox https://www.jetbrains.com/toolbox-app/ &
 firefox https://zoom.us/download?os=linux &
-echo 'XFCE Settings================================
-	Appearance
-		Style
-		  -nordic-darker
-		Icons
-		  -candy
-		Fonts
-		  -default roboto medium 10 
-		  -monospace fira code retina 10
-	Window manager (XFWM4) 
-		Style
-		   theme 
-			 -nordic darker
-		   title 
-			 -roboto condensed regular
-		   title 
-			  -alighment left
-		Keyboard 
-		  -maximize window super + M
-		  -close window super + Q
-	Default applications
- 		utilities 
- 		   terminal 
- 			  -kitty
-'
-sleep 2
 
 read -p "Run zsh? [y/N] " x
 if [[ $x = y ]] ; then
