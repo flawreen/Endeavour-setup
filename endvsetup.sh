@@ -1,11 +1,13 @@
 #!/bin/bash
-sudo pacman -S kitty powertop zsh ttf-fira-code ttf-roboto ttf-fira-sans discord git git-core gcc jre-openjdk jdk-openjdk code flatpak
+sudo pacman -S kitty powertop zsh ttf-fira-code ttf-roboto ttf-fira-sans discord git gcc jre-openjdk jdk-openjdk code flatpak
 curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
-sudo pacman -S sublime-text
+sudo pacman -Sy sublime-text
 flatpak install flathub com.spotify.Client
-yay -S --noconfirm zsh-theme-powerlevel10k-git
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+touch ~/.config/kitty/theme.conf
+touch ~/.config/kitty/kitty.conf
 sudo echo 'background            #181c27
 foreground            #ada37a
 cursor                #91805a
@@ -55,7 +57,7 @@ echo 'XFCE Settings================================
  		   terminal 
  			  -kitty
 '
-sleep 5
+sleep 2
 
 read -p "Run zsh? [y/N] " x
 if [[ $x = y ]] ; then
@@ -65,9 +67,4 @@ fi
 read -p "Configure zsh? [y/N] " x
 if [[ $x = y ]] ; then
 	zsh -c "p10k configure"
-fi
-
-read -p "Run kitty? [y/N] " x
-if [[ $x = y ]] ; then
-	kitty&
 fi
