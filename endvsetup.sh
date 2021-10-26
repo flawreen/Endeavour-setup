@@ -34,12 +34,5 @@ sudo echo 'include ./theme.conf' >> ~/.config/kitty/kitty.conf
 firefox https://www.jetbrains.com/toolbox-app/ &
 firefox https://zoom.us/download?os=linux &
 
-read -p "Run zsh? [y/N] " x
-if [[ $x = y ]] ; then
-	zsh
-fi
-
-read -p "Configure zsh? [y/N] " x
-if [[ $x = y ]] ; then
-	zsh -c "p10k configure"
-fi
+echo 'Type /bin/zsh to change your shell to zsh, otherwise press Ctrl + C'
+chsh
