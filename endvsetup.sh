@@ -34,5 +34,19 @@ sudo echo 'include ./theme.conf' >> ~/.config/kitty/kitty.conf
 firefox https://www.jetbrains.com/toolbox-app/ &
 firefox https://zoom.us/download?os=linux &
 
-echo 'Type /bin/zsh to change your shell to zsh, otherwise press Ctrl + C'
-chsh
+read -p "Do you want to change your shell to zsh? [y/N] " x
+if [[ $x = y ]] ; then
+    chsh
+fi
+
+read -p "Run kitty and Zsh? [y/N] " c
+if [[ $c = y ]] ; then
+    kitty -o allow_remote_control=yes --listen-on unix:/tmp/mykitty zsh
+fi
+
+if [[ $c != y ]] ; then
+    read -p "Run zsh? [y/N] " v
+    if [[ $v = y ]] ; then
+        zsh
+    fi
+fi
